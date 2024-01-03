@@ -24,14 +24,14 @@ public class DocenteController {
 	@Autowired
     private DocenteService docenteService;
 	
-	// Endpoint para obtener todos los usuarios
+	// Endpoint para obtener todos los docentes
     @GetMapping
     public ResponseEntity<List<Docente>> obtenerTodosLosDocentes() {
         List<Docente> docentes = docenteService.obtenerTodos();
         return new ResponseEntity<>(docentes, HttpStatus.OK);
     }
     
- // Endpoint para obtener un usuario por su ID
+ // Endpoint para obtener un docente por su ID
     @GetMapping("/{id}")
     public ResponseEntity<Docente> obtenerDocentePorId(@PathVariable Long id) {
         Docente docente = docenteService.obtenerPorId(id);
