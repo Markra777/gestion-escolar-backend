@@ -8,6 +8,8 @@ public class SistemaBackendColegioApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SistemaBackendColegioApplication.class, args);
+		
 	}
+	
 
 }
