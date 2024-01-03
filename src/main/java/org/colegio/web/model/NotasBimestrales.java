@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,5 +32,18 @@ public class NotasBimestrales {
 	
 	@Column(name = "comentarios_profesor")
 	private String comentariosProfesor;
+	
+	@ManyToOne
+    @JoinColumn(name = "id_estudiante")
+    private Estudiante estudiante;
+	
+	@ManyToOne
+    @JoinColumn(name = "id_asignatura")
+    private Asignatura asignatura;
+	
+	@ManyToOne
+    @JoinColumn(name = "id_curso")
+    private Curso curso;
+	
 
 }
